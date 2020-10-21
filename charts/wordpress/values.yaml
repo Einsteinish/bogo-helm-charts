@@ -69,7 +69,7 @@ wordpressPassword: wordpress
 ## Admin email
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
-wordpressEmail: kihyuck.hong@gmail.com
+wordpressEmail: k.hong@aol.com
 
 ## First name
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
@@ -79,7 +79,7 @@ wordpressFirstName: Ki
 ## Last name
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
-wordpressLastName: Hong
+wordpressLastName: Hong     
 
 ## Blog name
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
@@ -203,8 +203,7 @@ resources:
   #   cpu: 500m
   #   memory: 1Gi
   requests:
-    # memory: 512Mi  ==>
-    memory: 256Mi
+    memory: 512Mi
     cpu: 300m
 
 ## Affinity for pod assignment
@@ -397,8 +396,7 @@ persistence:
   ## the existingClaim variable
   # existingClaim: your-claim
   accessMode: ReadWriteOnce
-  # size: 10Gi ==>
-  size: 5Gi
+  size: 10Gi
 
 ##
 ## MariaDB chart configuration
@@ -418,8 +416,7 @@ mariadb:
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-user-on-first-run
   ##
   db:
-    name: bitnami_wordpress
-    # user: bn_wordpress
+    name: wordpress
     user: wordpress
     ## If the password is not specified, mariadb will generates a random password
     ##
@@ -429,7 +426,7 @@ mariadb:
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#setting-the-root-password-on-first-run
   ##
   # rootUser:
-  # password: wordpress
+  #   password:
 
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -447,8 +444,7 @@ mariadb:
       # storageClass: "-"
       accessModes:
         - ReadWriteOnce
-      # size: 8Gi ==>
-      size: 3Gi
+      size: 8Gi
 
 ##
 ## External Database Configuration
